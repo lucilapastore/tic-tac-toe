@@ -21,7 +21,7 @@ body {
   background: radial-gradient(
       circle at top,
       rgba(57, 11, 164, 0.98),
-      rgba(12, 78, 132, 0.87)
+      rgba(103, 184, 250, 0.87)
     ),
     url('bg-pattern-dark.png');
   background-repeat: repeat;
