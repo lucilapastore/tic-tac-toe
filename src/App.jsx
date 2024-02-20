@@ -77,27 +77,50 @@ function App() {
   }
 
   return (
-    <main>
-      <div id="game-container">
-        <ol id="players" className="highlight-player">
-          <Player
-            initialName="Player 1"
-            symbol="X"
-            isActive={activePlayer === "X"}
-          />
-          <Player
-            initialName="Player 2"
-            symbol="O"
-            isActive={activePlayer === "O"}
-          />
-        </ol>
-        {(winner || hasDraw) && (
-          <GameOver winner={winner} onRematch={handleRematch} />
-        )}
-        <GameBoard onSelectSquare={handleSelectSquare} board={gameBoard} />
-      </div>
-      <Log turns={gameTurns} />
-    </main>
+    <>
+      <header>
+        <div style={{ display: "flex", alignItems: "center", width: "100%" }}>
+          {/* <img
+            src="game-logo.png"
+            alt="tic tac toe's picture"
+            style={{ width: "40px" }}
+          /> */}
+
+          <h1
+            style={{
+              margin: 0,
+              color: "#aca788",
+              width: "100%",
+              fontFamily: "circular",
+            }}
+          >
+            Tic-Tac-Toe
+          </h1>
+        </div>
+      </header>
+
+      <main>
+        <div id="game-container">
+          <ol id="players" className="highlight-player">
+            <Player
+              initialName="Player 1"
+              symbol="X"
+              isActive={activePlayer === "X"}
+            />
+            <Player
+              initialName="Player 2"
+              symbol="O"
+              isActive={activePlayer === "O"}
+            />
+          </ol>
+          {(winner || hasDraw) && (
+            <GameOver winner={winner} onRematch={handleRematch} />
+          )}
+          <GameBoard onSelectSquare={handleSelectSquare} board={gameBoard} />
+        </div>
+        <Log turns={gameTurns} />
+      </main>
+    </>
   );
 }
 
